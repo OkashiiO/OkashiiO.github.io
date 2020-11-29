@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="浏览器缓存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器缓存">
+<meta property="og:url" content="http://example.com/2020/11/29/blog/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/index.html">
+<meta property="og:site_name" content="OkashiiO的个人博客">
+<meta property="og:description" content="浏览器缓存">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-11-29T09:15:42.769Z">
+<meta property="article:modified_time" content="2020-11-29T09:40:39.939Z">
+<meta property="article:author" content="OkashiiO">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/11/29/blog/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>浏览器缓存 | OkashiiO的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">OkashiiO的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">wubba lubba dub dub</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">35</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/29/blog/%E6%B5%8F%E8%A7%88%E5%99%A8/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="OkashiiO">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OkashiiO的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浏览器缓存
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-29 17:15:42 / 修改时间：17:40:39" itemprop="dateCreated datePublished" datetime="2020-11-29T17:15:42+08:00">2020-11-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B5%8F%E8%A7%88%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">浏览器</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h1><a id="more"></a>
+
+<h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><p>强缓存简单理解就是:给浏览器缓存设置过期时间，超过这个时间之后缓存就是过期,浏览器需要重新请求。</p>
+<p><strong>强缓存主要是通过http请求头中的Cache-Control和Expires两个字段控制</strong>。</p>
+<h4 id="expires"><a href="#expires" class="headerlink" title="expires"></a>expires</h4><p>expires是一个HTTP/1.0的字段,它给浏览器设置了一个绝对时间，当浏览器时间超过这个绝对时间之后，重新向服务器发送请求。</p>
+<p><strong>用法:</strong></p>
+<p>它描述的是一个<strong>绝对时间,用GMT格式的字符串表示</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Expires: Wed Feb 20 2019 11:25:41 GMT</span><br></pre></td></tr></table></figure>
+
+<p><strong>弊端:</strong></p>
+<p>Expires返回的是服务器的时间，但判断的时候用的却是客户端的时间，这就导致Expires很被动，因为用户有可能改变客户端的时间，导致缓存时间判断出错，这也是引入Cache-Control:max-age指令的原因之一。</p>
+<hr>
+<h4 id="cache-control-max-age"><a href="#cache-control-max-age" class="headerlink" title="cache-control: max-age"></a>cache-control: max-age</h4><p>为了解决expires存在的问题，Http1.1版本中提出了<strong>cache-control:max-age</strong>，该字段与expires的缓存思路相同，都是设置了一个过期时间，不同的是max-age设置的是<strong>相对缓存时间开始往后的多少秒，因此不再受日期不准确情况的影响。</strong></p>
+<p><strong>用法:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cache-control: max-age&#x3D;666</span><br></pre></td></tr></table></figure>
+
+<p><strong>优先级:</strong><br>在优先级上:<code>max-age&gt;Expires</code>。当两者同时出现在响应头时,Expires将被max-age覆盖.</p>
+<p><strong>用法:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cache-control: max-age&#x3D;666</span><br></pre></td></tr></table></figure>
+
+<p>表示资源会在 666 秒后过期，需要再次请求。</p>
+<hr>
+<h4 id="强缓存在浏览器上的表现"><a href="#强缓存在浏览器上的表现" class="headerlink" title="强缓存在浏览器上的表现"></a>强缓存在浏览器上的表现</h4><ul>
+<li>Firefox浏览器对强缓存表现为一个灰色的200状态码。</li>
+<li>Chrome浏览器状态码表现为:<code>200 (from disk cache)或是200 OK (from memory cache)</code></li>
+</ul>
+<p>但是强制缓存存在一个问题，该缓存方式优先级高，如果在过期时间内缓存的资源在服务器上更新了，客服端不能及时获取最新的资源。这时怎么办?于是就有了协商缓存.</p>
+<h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><p>协商缓存解决了无法及时获取更新资源的问题。它利用下面会讲到的两组字段,对资源做标识.然后由服务器做分析，如果资源未更新，则返回304状态码.那么浏览器则会从缓存中读取资源，否则重新请求资源。</p>
+<p><strong>协商缓存是利用的是【Last-Modified，If-Modified-Since】和【ETag、If-None-Match】这两对Header来管理的。</strong></p>
+<h4 id="Last-Modified与If-Modified-Since"><a href="#Last-Modified与If-Modified-Since" class="headerlink" title="Last-Modified与If-Modified-Since"></a>Last-Modified与If-Modified-Since</h4><ul>
+<li>1,浏览器第一次向服务器请求资源，服务器会在返回这个资源的同时，<strong>在response的header加上Last-Modified的header</strong>,这个header表示这个资源在服务器上的最后修改时间：<code>Last-Modified: Wed Feb 20 2019 14:08:32 GMT</code></li>
+<li>2,浏览器之后再向服务器请求这个资源时，<strong>在request的header上加上If-Modified-Since的header</strong>，这个header的值就是上一次请求时返回的Last-Modified的值：<code>Last-Modified: Wed Feb 20 2019 14:08:32 GMT</code></li>
+<li>3,服务器再次收到资源请求时，<strong>根据浏览器传过来If-Modified-Since和资源在服务器上的最后修改时间判断资源是否有变化</strong>，如果没有变化则返回304 Not Modified，但是<strong>不会返回资源内容</strong>；如果有变化,返回200，就正常返回资源内容。<ul>
+<li><strong>当服务器返回304 Not Modified的响应时，response的header中不会再添加Last-Modified的header</strong>，因为既然资源没有变化，那么Last-Modified也就不会改变，这是服务器返回304时的response header.</li>
+</ul>
+</li>
+<li>4,浏览器收到304的响应后，就会从缓存中加载资源。</li>
+<li>5,浏览器收到200的响应后，则从服务器加载新资源时，Last-Modified Header在重新加载的时候会被更新，下次请求时，If-Modified-Since会启用上次返回的Last-Modified值。</li>
+</ul>
+<p><strong>弊端:</strong><br> 【Last-Modified，If-Modified-Since】都是根据服务器时间返回的header，一般来说，在没有调整服务器时间和篡改客户端缓存的情况下，这两个header配合起来管理协商缓存是非常可靠的，但是<strong>它们是以秒为单位进行更新，如果小于该单位高频进行更新的话，则不适合采用该方法。</strong> 这时候协商缓就不那么的可靠了。所以就有了另外一对header来管理协商缓存，这对header就是【ETag、If-None-Match】。</p>
+<hr>
+<h4 id="ETag与If-None-Match"><a href="#ETag与If-None-Match" class="headerlink" title="ETag与If-None-Match"></a>ETag与If-None-Match</h4><ul>
+<li>1,浏览器第一次跟服务器请求一个资源，<strong>服务器在返回这个资源的同时，在response的header加上ETag的header</strong>，这个header是服务器<strong>根据当前请求的资源生成的一个唯一标识，这个唯一标识是一个字符串</strong>，<code>ETag: shotcat-66666</code>只要资源有变化这个串就不同，跟最后修改时间没有关系，所以能很好的补充Last-Modified的问题.</li>
+<li>2,浏览器再次跟服务器请求这个资源时，<strong>在request的header上加上If-None-Match的header</strong>，这个header的值就是上一次请求时返回的ETag的值<code>If-None-Match: shotcat-66666</code>.</li>
+<li>3,服务器再次收到资源请求时，根据浏览器传过来If-None-Match和然后再根据资源生成一个新的ETag，如果这两个值相同就说明资源没有变化，否则就是有变化；如果没有变化则返回304 Not Modified，但是不会返回资源内容；如果有变化，则返回200,并正常返回资源内容。与Last-Modified不一样的是，当服务器返回304 Not Modified的响应时，<strong>由于ETag重新生成过，response header中还会把这个ETag返回，即使这个ETag跟之前的没有变化</strong></li>
+<li>4,浏览器收到304的响应后，就会从缓存中加载资源。</li>
+<li>5,浏览器收到200的响应后，则从服务器加载新资源时，ETag在重新加载的时候会被更新，下次请求时，If-None-Match会启用上次返回的ETag值。</li>
+</ul>
+<p>Etag和Last-Modified非常相似，都是用来判断一个参数，从而决定是否启用缓存。但是ETag相对于Last-Modified也有其优势，<strong>可以更加准确的判断文件内容是否被修改，</strong> 从而在实际操作中实用程度也更高,但缺点也很明显,<strong>由于需要对资源进行生成标识，性能方面就势必有所牺牲</strong>。</p>
+<p><strong>优先级:</strong><br> <strong>ETag与If-None-Match &gt; Last-Modified与If-Modified-Since,</strong> 同时存在时, 前者覆盖后者.</p>
+<h2 id="启发式缓存"><a href="#启发式缓存" class="headerlink" title="启发式缓存"></a>启发式缓存</h2><p>我跟我们的请求头中确定缓存过期时间的字段一个都没有.例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Age:23146</span><br><span class="line">Cache-Control: public</span><br><span class="line">Date:Tue, 28 Nov 2017 12:26:41 GMT</span><br><span class="line">Last-Modified:Tue, 28 Nov 2017 05:14:02 GMT</span><br><span class="line">Vary:Accept-Encoding</span><br></pre></td></tr></table></figure>
+
+<p>此时则会默认触发浏览器启发式缓存:<br> <strong>浏览器会根据响应头中2个时间字段 Date 和 Last-Modified 之间的时间差值，取其值的10%作为缓存时间周期。</strong></p>
+<h2 id="缓存的优先级"><a href="#缓存的优先级" class="headerlink" title="缓存的优先级"></a>缓存的优先级</h2><p>在缓存策略上:强缓存&gt;协商缓存&gt;启发式缓存</p>
+<p>进一步分析可得出,以下优先级：<br> Cache-Control &gt; Expires &gt; ETag &gt; Last-Modified</p>
+<h4 id="非常注意"><a href="#非常注意" class="headerlink" title="非常注意"></a><strong>非常注意</strong></h4><p>其他所有教程都是告诉你浏览器肯定是先检查强缓存,再检查协商缓存!但实际它们都忽略了一点.其实浏览器是<strong>先检查Cache-Control,如果为no-store.则浏览器 所有内容都不会缓存，强制缓存，协商缓存统统都不会触发!!!</strong></p>
+<h4 id="补充-Pragma"><a href="#补充-Pragma" class="headerlink" title="补充:Pragma"></a>补充:Pragma</h4><p>它是HTTP/1.0里面的一个字段，在http1.1已被抛弃，使用Cache-Control替代.但为了做http协议的向下兼容，很多网站依旧会带上这个字段但优先级很高.</p>
+<p>测试发现，Chrome和Firefox中Pragma的优先级高于Cache-Control和Expires.</p>
+<p>一般可能会这么用：<code>&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;</code></p>
+<p>服务端响应添加’Pragma’: ‘no-cache’，浏览器表现行为和强制刷新类似。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/29/blog/%E6%B5%8F%E8%A7%88%E5%99%A8/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" rel="prev" title="垃圾回收">
+      <i class="fa fa-chevron-left"></i> 垃圾回收
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/29/blog/%E6%B5%8F%E8%A7%88%E5%99%A8/%E7%BC%93%E5%AD%98/" rel="next" title="跨域">
+      跨域 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="nav-number">1.</span> <span class="nav-text">浏览器缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E7%BC%93%E5%AD%98"><span class="nav-number">1.1.</span> <span class="nav-text">强缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#expires"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">expires</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cache-control-max-age"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">cache-control: max-age</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%BA%E7%BC%93%E5%AD%98%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8A%E7%9A%84%E8%A1%A8%E7%8E%B0"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">强缓存在浏览器上的表现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E5%95%86%E7%BC%93%E5%AD%98"><span class="nav-number">1.2.</span> <span class="nav-text">协商缓存</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Last-Modified%E4%B8%8EIf-Modified-Since"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">Last-Modified与If-Modified-Since</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ETag%E4%B8%8EIf-None-Match"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">ETag与If-None-Match</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AF%E5%8F%91%E5%BC%8F%E7%BC%93%E5%AD%98"><span class="nav-number">1.3.</span> <span class="nav-text">启发式缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7"><span class="nav-number">1.4.</span> <span class="nav-text">缓存的优先级</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%9E%E5%B8%B8%E6%B3%A8%E6%84%8F"><span class="nav-number">1.4.0.1.</span> <span class="nav-text">非常注意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E5%85%85-Pragma"><span class="nav-number">1.4.0.2.</span> <span class="nav-text">补充:Pragma</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="OkashiiO"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">OkashiiO</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/136917909" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;136917909" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/1900849346@qq.com" title="E-Mail → 1900849346@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OkashiiO</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

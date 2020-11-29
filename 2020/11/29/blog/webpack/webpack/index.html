@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="HTTP状态码MDN文档  1xx 指示信息：表示请求已接收，继续处理   2xx 成功：表示请求已被成功接收、理解、接受   3xx 重定向：要完成请求必须进行更进一步的操作   4xx 客户端错误：请求语法错误或请求无法实现   5xx 服务器错误">
+  <meta name="description" content="webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP状态码">
-<meta property="og:url" content="http://example.com/2020/11/07/%E7%BD%91%E7%BB%9C/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/index.html">
+<meta property="og:title" content="webpack总结">
+<meta property="og:url" content="http://example.com/2020/11/29/blog/webpack/webpack/index.html">
 <meta property="og:site_name" content="OkashiiO的个人博客">
-<meta property="og:description" content="HTTP状态码MDN文档  1xx 指示信息：表示请求已接收，继续处理   2xx 成功：表示请求已被成功接收、理解、接受   3xx 重定向：要完成请求必须进行更进一步的操作   4xx 客户端错误：请求语法错误或请求无法实现   5xx 服务器错误">
+<meta property="og:description" content="webpack">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-11-07T09:24:41.001Z">
-<meta property="article:modified_time" content="2020-11-07T12:00:50.652Z">
+<meta property="article:published_time" content="2020-11-29T09:15:42.751Z">
+<meta property="article:modified_time" content="2020-11-29T09:42:50.064Z">
 <meta property="article:author" content="OkashiiO">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2020/11/07/%E7%BD%91%E7%BB%9C/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
+<link rel="canonical" href="http://example.com/2020/11/29/blog/webpack/webpack/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>HTTP状态码 | OkashiiO的个人博客</title>
+  <title>webpack总结 | OkashiiO的个人博客</title>
   
 
 
@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/07/%E7%BD%91%E7%BB%9C/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/29/blog/webpack/webpack/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -171,7 +171,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          HTTP状态码
+          webpack总结
         </h1>
 
         <div class="post-meta">
@@ -182,7 +182,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-07 17:24:41 / 修改时间：20:00:50" itemprop="dateCreated datePublished" datetime="2020-11-07T17:24:41+08:00">2020-11-07</time>
+              <time title="创建时间：2020-11-29 17:15:42 / 修改时间：17:42:50" itemprop="dateCreated datePublished" datetime="2020-11-29T17:15:42+08:00">2020-11-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -190,7 +190,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+                  <a href="/categories/webpack/" itemprop="url" rel="index"><span itemprop="name">webpack</span></a>
                 </span>
             </span>
 
@@ -205,102 +205,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status">MDN文档</a></p>
-<ul>
-<li>1xx<ul>
-<li>指示信息：表示请求已接收，继续处理</li>
-</ul>
-</li>
-<li>2xx<ul>
-<li>成功：表示请求已被成功接收、理解、接受</li>
-</ul>
-</li>
-<li>3xx<ul>
-<li>重定向：要完成请求必须进行更进一步的操作</li>
-</ul>
-</li>
-<li>4xx<ul>
-<li>客户端错误：请求语法错误或请求无法实现</li>
-</ul>
-</li>
-<li>5xx<ul>
-<li>服务器错误</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
+        <h1 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h1><a id="more"></a>
 
-<h3 id="常见"><a href="#常见" class="headerlink" title="常见"></a>常见</h3><ul>
-<li>200<ul>
-<li>一切正常，对GET和POST请求的应答文档跟在后面。</li>
-</ul>
-</li>
-<li>204<ul>
-<li>没有新文档，浏览器应该继续显示原来的文档。<ul>
-<li>如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>206<ul>
-<li>客户发送了一个带有Range头的GET请求，服务器完成了它（HTTP 1.1新）</li>
-</ul>
-</li>
-<li>301<ul>
-<li>永久重定向，资源已永久分配新URI</li>
-</ul>
-</li>
-<li>302<ul>
-<li>临时重定向，资源已临时分配新URI</li>
-</ul>
-</li>
-<li>303<ul>
-<li>临时重定向，期望使用GET定向获取</li>
-<li>类似于301/302，不同之处在于，<ul>
-<li>如果原来的请求是POST，Location头指定的重定向目标文档应该通过GET提取（HTTP 1.1新）。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>304<ul>
-<li>客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。</li>
-<li>服务器告 诉客户，原来缓冲的文档还可以继续使用。</li>
-</ul>
-</li>
-<li>400<ul>
-<li>请求出现语法错误。</li>
-</ul>
-</li>
-<li>401<ul>
-<li>需要通过HTTP认证，或认证失败</li>
-</ul>
-</li>
-<li>403<ul>
-<li>资源不可用。服务器理解客户的请求，但拒绝处理它。</li>
-<li>通常由于服务器上文件或目录的权限设置导致。</li>
-</ul>
-</li>
-<li>404<ul>
-<li>无法找到请求资源</li>
-</ul>
-</li>
-<li>500<ul>
-<li>服务器故障或Web应用故障</li>
-</ul>
-</li>
-<li>502<ul>
-<li>作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</li>
-</ul>
-</li>
-<li>504 <ul>
-<li>Gateway Time-out 充当网关或代理的服务器，未及时从远端服务器获取请求</li>
-</ul>
-</li>
-<li>505 <ul>
-<li>HTTP Version not supported</li>
-</ul>
-</li>
-</ul>
+<h2 id="entry"><a href="#entry" class="headerlink" title="entry"></a>entry</h2><p>webpack.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">modoule.exports = &#123;</span><br><span class="line">    entry:<span class="string">&#x27;入口文件路径，默认为./src&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="output"><a href="#output" class="headerlink" title="output"></a>output</h2><p>webpack.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line">modoule.exports = &#123;</span><br><span class="line">	entry:<span class="string">&#x27;入口文件路径，默认为./src&#x27;</span>,</span><br><span class="line">	output:&#123;</span><br><span class="line">		path:path.resolve(_dirname,<span class="string">&#x27;dist&#x27;</span>),</span><br><span class="line">		filename:<span class="string">&#x27;my-first-webpack.bundle.js&#x27;</span></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="loader"><a href="#loader" class="headerlink" title="loader"></a>loader</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line">modoule.exports = &#123;</span><br><span class="line">	entry:<span class="string">&#x27;入口文件路径，默认为./src&#x27;</span>,</span><br><span class="line">	output:&#123;</span><br><span class="line">		path:path.resolve(_dirname,<span class="string">&#x27;dist&#x27;</span>),</span><br><span class="line">		filename:<span class="string">&#x27;my-first-webpack.bundle.js&#x27;</span></span><br><span class="line">	&#125;,</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">module</span>:&#123;</span><br><span class="line">		rules:[</span><br><span class="line">			&#123; <span class="attr">test</span>:<span class="regexp">/\.txt$/</span>,use:<span class="string">&#x27;raw-loader&#x27;</span> &#125;</span><br><span class="line">		]</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上配置中，对一个单独的 module 对象定义了 <code>rules</code> 属性，里面包含两个必须属性：<code>test</code> 和 <code>use</code>。这告诉 webpack 编译器(compiler) 如下信息：</p>
+<blockquote>
+<p>“嘿，webpack 编译器，当你碰到「在 <code>require()</code>/<code>import</code> 语句中被解析为 ‘.txt’ 的路径」时，在你对它打包之前，先<strong>使用</strong> <code>raw-loader</code> 转换一下。”</p>
+</blockquote>
+<h2 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件[plugins]"></a>插件[plugins]</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">&#x27;html-webpack-plugin&#x27;</span>); <span class="comment">// 通过 npm 安装</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">&#x27;webpack&#x27;</span>); <span class="comment">// 用于访问内置插件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">	entry:<span class="string">&#x27;入口文件路径，默认为./src&#x27;</span>,</span><br><span class="line">	output:&#123;</span><br><span class="line">		path:path.resolve(_dirname,<span class="string">&#x27;dist&#x27;</span>),</span><br><span class="line">		filename:<span class="string">&#x27;my-first-webpack.bundle.js&#x27;</span></span><br><span class="line">	&#125;,</span><br><span class="line">  	<span class="built_in">module</span>: &#123;</span><br><span class="line">    	rules: [</span><br><span class="line">      		&#123; <span class="attr">test</span>: <span class="regexp">/\.txt$/</span>, use: <span class="string">&#x27;raw-loader&#x27;</span> &#125;</span><br><span class="line">    	]</span><br><span class="line">  	&#125;,</span><br><span class="line"> 	plugins: [</span><br><span class="line">    	<span class="keyword">new</span> HtmlWebpackPlugin(&#123;<span class="attr">template</span>: <span class="string">&#x27;./src/index.html&#x27;</span>&#125;)</span><br><span class="line">  	]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="常见的loader和plugin"><a href="#常见的loader和plugin" class="headerlink" title="常见的loader和plugin"></a>常见的loader和plugin</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/molvshan/article/details/105702643">常见loader和plugin</a></p>
+<p>html: pug-loader markdown-loader</p>
+<p>CSS:   postcss-loader scss-loader less-loader style-loader</p>
+<p>js: babel-loader,eslint-loader</p>
+<p>图片 image-loader</p>
+<p>plugin</p>
+<p>html     html-webpack-plugin</p>
+<p>css        mini-extract-webpack-plugin    extract-text-webpack-plugin</p>
+<p>其他    happypack</p>
 
     </div>
 
@@ -315,10 +250,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/11/07/%E7%BD%91%E7%BB%9C/%E8%B7%A8%E5%9F%9F/" rel="next" title="跨域">
-      跨域 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/29/blog/Vue/Vue%E7%BB%84%E4%BB%B6%E9%80%9A%E4%BF%A1/" rel="prev" title="Vue组件通信">
+      <i class="fa fa-chevron-left"></i> Vue组件通信
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/29/blog/%E6%B5%8F%E8%A7%88%E5%99%A8/%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8A%A0%E8%BD%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/" rel="next" title="从输入URL到页面加载发生了什么？">
+      从输入URL到页面加载发生了什么？ <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -378,7 +316,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">HTTP状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81"><span class="nav-number">1.0.1.</span> <span class="nav-text">常见</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack"><span class="nav-number">1.</span> <span class="nav-text">webpack</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#entry"><span class="nav-number">1.1.</span> <span class="nav-text">entry</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#output"><span class="nav-number">1.2.</span> <span class="nav-text">output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#loader"><span class="nav-number">1.3.</span> <span class="nav-text">loader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6-plugins"><span class="nav-number">1.4.</span> <span class="nav-text">插件[plugins]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84loader%E5%92%8Cplugin"><span class="nav-number">1.5.</span> <span class="nav-text">常见的loader和plugin</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

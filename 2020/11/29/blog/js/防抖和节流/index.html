@@ -22,19 +22,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="HTTP状态码MDN文档  1xx 指示信息：表示请求已接收，继续处理   2xx 成功：表示请求已被成功接收、理解、接受   3xx 重定向：要完成请求必须进行更进一步的操作   4xx 客户端错误：请求语法错误或请求无法实现   5xx 服务器错误">
+  <meta name="description" content="防抖和节流">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HTTP状态码">
-<meta property="og:url" content="http://example.com/2020/11/07/%E7%BD%91%E7%BB%9C/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/index.html">
+<meta property="og:title" content="防抖和节流">
+<meta property="og:url" content="http://example.com/2020/11/29/blog/js/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/index.html">
 <meta property="og:site_name" content="OkashiiO的个人博客">
-<meta property="og:description" content="HTTP状态码MDN文档  1xx 指示信息：表示请求已接收，继续处理   2xx 成功：表示请求已被成功接收、理解、接受   3xx 重定向：要完成请求必须进行更进一步的操作   4xx 客户端错误：请求语法错误或请求无法实现   5xx 服务器错误">
+<meta property="og:description" content="防抖和节流">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-11-07T09:24:41.001Z">
-<meta property="article:modified_time" content="2020-11-07T12:00:50.652Z">
+<meta property="article:published_time" content="2020-11-29T09:15:42.620Z">
+<meta property="article:modified_time" content="2020-11-29T09:41:54.527Z">
 <meta property="article:author" content="OkashiiO">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2020/11/07/%E7%BD%91%E7%BB%9C/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
+<link rel="canonical" href="http://example.com/2020/11/29/blog/js/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>HTTP状态码 | OkashiiO的个人博客</title>
+  <title>防抖和节流 | OkashiiO的个人博客</title>
   
 
 
@@ -158,7 +158,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/07/%E7%BD%91%E7%BB%9C/HTTP%E7%8A%B6%E6%80%81%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/29/blog/js/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -171,7 +171,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          HTTP状态码
+          防抖和节流
         </h1>
 
         <div class="post-meta">
@@ -182,7 +182,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-11-07 17:24:41 / 修改时间：20:00:50" itemprop="dateCreated datePublished" datetime="2020-11-07T17:24:41+08:00">2020-11-07</time>
+              <time title="创建时间：2020-11-29 17:15:42 / 修改时间：17:41:54" itemprop="dateCreated datePublished" datetime="2020-11-29T17:15:42+08:00">2020-11-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -190,7 +190,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+                  <a href="/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
                 </span>
             </span>
 
@@ -205,102 +205,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h1><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status">MDN文档</a></p>
-<ul>
-<li>1xx<ul>
-<li>指示信息：表示请求已接收，继续处理</li>
-</ul>
-</li>
-<li>2xx<ul>
-<li>成功：表示请求已被成功接收、理解、接受</li>
-</ul>
-</li>
-<li>3xx<ul>
-<li>重定向：要完成请求必须进行更进一步的操作</li>
-</ul>
-</li>
-<li>4xx<ul>
-<li>客户端错误：请求语法错误或请求无法实现</li>
-</ul>
-</li>
-<li>5xx<ul>
-<li>服务器错误</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
+        <h2 id="防抖和节流"><a href="#防抖和节流" class="headerlink" title="防抖和节流"></a>防抖和节流</h2><a id="more"></a>
 
-<h3 id="常见"><a href="#常见" class="headerlink" title="常见"></a>常见</h3><ul>
-<li>200<ul>
-<li>一切正常，对GET和POST请求的应答文档跟在后面。</li>
+<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>指触发事件后在<strong>规定时间内</strong>回调函数<strong>只能执行一次</strong>，如果在规定时间内<strong>又</strong>触发了该事件，则会重新开始算规定时间。</p>
+<p>网上有这个比喻:函数防抖就是法师发技能的时候要读条，技能读条没完再按技能就会刷新技能,重新进行读条。</p>
+<p>四个字总结就是 <strong>延时执行</strong></p>
+<p><strong>应用场景</strong>：</p>
+<p>1.如果客户连续的操作会导致频繁的事件回调(可能引起页面卡顿).<br>2.客户只关心”最后一次”操作(也可以理解为停止连续操作后)所返回的结果.<br>例如:</p>
+<ul>
+<li>输入搜索联想，用户在不断输入值时，用防抖来节约请求资源。</li>
+<li>按钮点击:收藏,点赞,心标等</li>
 </ul>
-</li>
-<li>204<ul>
-<li>没有新文档，浏览器应该继续显示原来的文档。<ul>
-<li>如果用户定期地刷新页面，而Servlet可以确定用户文档足够新，这个状态代码是很有用的。</li>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func,delay = <span class="number">1000</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> timer;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">        <span class="function"><span class="title">if</span>(<span class="params">timer</span>)</span>&#123;</span><br><span class="line">            <span class="built_in">clearTimeout</span>(timer)</span><br><span class="line">        &#125;</span><br><span class="line">        timer = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            func.apply(<span class="built_in">this</span>,args)</span><br><span class="line">        &#125;,delay)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> task = <span class="function">() =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="string">&#x27;run task&#x27;</span>)&#125;</span><br><span class="line"><span class="keyword">const</span> debounceTask = debounce(task,<span class="number">1000</span>);</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;click&#x27;</span>,debounceTask);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><p>当持续触发事件时，在规定时间段内只能调用一次回调函数。如果在规定时间内<strong>又</strong>触发了该事件，<strong>则什么也不做,也不会重置定时器.</strong></p>
+<p><strong>应用场景</strong>：</p>
+<p>1.客户<strong>连续频繁地</strong>触发事件<br>2.客户不再只关心”最后一次”操作后的结果反馈.而是在操作过程中持续的反馈.<br> 例如:</p>
+<ul>
+<li>鼠标不断点击触发，点击事件在规定时间内只触发一次(单位时间内只触发一次)</li>
+<li>监听滚动事件，比如是否滑到底部自动加载更多，用throttle来判断</li>
 </ul>
-</li>
-</ul>
-</li>
-<li>206<ul>
-<li>客户发送了一个带有Range头的GET请求，服务器完成了它（HTTP 1.1新）</li>
-</ul>
-</li>
-<li>301<ul>
-<li>永久重定向，资源已永久分配新URI</li>
-</ul>
-</li>
-<li>302<ul>
-<li>临时重定向，资源已临时分配新URI</li>
-</ul>
-</li>
-<li>303<ul>
-<li>临时重定向，期望使用GET定向获取</li>
-<li>类似于301/302，不同之处在于，<ul>
-<li>如果原来的请求是POST，Location头指定的重定向目标文档应该通过GET提取（HTTP 1.1新）。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>304<ul>
-<li>客户端有缓冲的文档并发出了一个条件性的请求（一般是提供If-Modified-Since头表示客户只想比指定日期更新的文档）。</li>
-<li>服务器告 诉客户，原来缓冲的文档还可以继续使用。</li>
-</ul>
-</li>
-<li>400<ul>
-<li>请求出现语法错误。</li>
-</ul>
-</li>
-<li>401<ul>
-<li>需要通过HTTP认证，或认证失败</li>
-</ul>
-</li>
-<li>403<ul>
-<li>资源不可用。服务器理解客户的请求，但拒绝处理它。</li>
-<li>通常由于服务器上文件或目录的权限设置导致。</li>
-</ul>
-</li>
-<li>404<ul>
-<li>无法找到请求资源</li>
-</ul>
-</li>
-<li>500<ul>
-<li>服务器故障或Web应用故障</li>
-</ul>
-</li>
-<li>502<ul>
-<li>作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应</li>
-</ul>
-</li>
-<li>504 <ul>
-<li>Gateway Time-out 充当网关或代理的服务器，未及时从远端服务器获取请求</li>
-</ul>
-</li>
-<li>505 <ul>
-<li>HTTP Version not supported</li>
-</ul>
-</li>
-</ul>
+<p><strong>注意</strong> :何为连续频繁地触发事件,就是<strong>事件触发的时间间隔至少是要比规定的时间要短.</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">func, delay = <span class="number">1000</span></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">let</span> canRun = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">...args</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!canRun) <span class="keyword">return</span></span><br><span class="line">        canRun = <span class="literal">false</span>;</span><br><span class="line">        <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            func.apply(<span class="built_in">this</span>,args);</span><br><span class="line">            canRun = <span class="literal">true</span>;</span><br><span class="line">        &#125;,delay)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> task = <span class="function">() =&gt;</span> &#123;<span class="built_in">console</span>.log(<span class="string">&#x27;runtask&#x27;</span>)&#125;</span><br><span class="line"><span class="keyword">const</span> throttleTask = throttle(task,<span class="number">1000</span>);</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&#x27;click&#x27;</span>,throttleTask);</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="防抖节流对比"><a href="#防抖节流对比" class="headerlink" title="防抖节流对比"></a>防抖节流对比</h3><p>防抖是将多次执行变为最后一次执行，节流是将多次执行变为在规定时间内只执行一次.一般<strong>不会重置定时器.</strong> </p>
+<p><a target="_blank" rel="noopener" href="https://github.com/okashiio/Training_Code/tree/master/%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81">参考git源码</a></p>
 
     </div>
 
@@ -315,10 +250,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/11/07/%E7%BD%91%E7%BB%9C/%E8%B7%A8%E5%9F%9F/" rel="next" title="跨域">
-      跨域 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/11/29/blog/js/%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD/" rel="prev" title="js类型及判断">
+      <i class="fa fa-chevron-left"></i> js类型及判断
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/29/blog/js/DOM/DOM%E4%BA%8B%E4%BB%B6%E6%B5%81/" rel="next" title="JS事件流及事件委托">
+      JS事件流及事件委托 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -378,7 +316,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">HTTP状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81"><span class="nav-number">1.0.1.</span> <span class="nav-text">常见</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81"><span class="nav-number">1.</span> <span class="nav-text">防抖和节流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E6%8A%96"><span class="nav-number">1.1.</span> <span class="nav-text">防抖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E6%B5%81"><span class="nav-number">1.2.</span> <span class="nav-text">节流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%B2%E6%8A%96%E8%8A%82%E6%B5%81%E5%AF%B9%E6%AF%94"><span class="nav-number">1.3.</span> <span class="nav-text">防抖节流对比</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

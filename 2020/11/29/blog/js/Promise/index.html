@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Promise">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise">
+<meta property="og:url" content="http://example.com/2020/11/29/blog/js/Promise/index.html">
+<meta property="og:site_name" content="OkashiiO的个人博客">
+<meta property="og:description" content="Promise">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-11-29T09:15:42.613Z">
+<meta property="article:modified_time" content="2020-11-29T09:42:27.501Z">
+<meta property="article:author" content="OkashiiO">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2020/11/29/blog/js/Promise/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-Hans'
+  };
+</script>
+
+  <title>Promise | OkashiiO的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">OkashiiO的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">wubba lubba dub dub</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">35</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/29/blog/js/Promise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="OkashiiO">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="OkashiiO的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Promise
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-29 17:15:42 / 修改时间：17:42:27" itemprop="dateCreated datePublished" datetime="2020-11-29T17:15:42+08:00">2020-11-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><a id="more"></a>
+
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>一个 <code>Promise</code>有以下几种状态:</p>
+<ul>
+<li><strong>pending</strong>: 初始状态，既不是成功，也不是失败状态。</li>
+</ul>
+<ul>
+<li><strong>fulfilled</strong>: 意味着操作成功完成。</li>
+<li><strong>rejected</strong>: 意味着操作失败。</li>
+</ul>
+<p>Promise 中的状态只能按以下方式改变：<strong>一旦状态发生改变，就定死了，再也不能改变了</strong>。</p>
+<ul>
+<li>pending -&gt; fulfilled</li>
+<li>pending -&gt; rejected</li>
+</ul>
+<h3 id="Promise-的-then-方法"><a href="#Promise-的-then-方法" class="headerlink" title="Promise 的 then 方法"></a>Promise 的 then 方法</h3><p>then 方法需要传递 2 个函数，分别为 Fulfilled 状态和 Rejected 状态的回调函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">promise.then(onFulfilled, onRejected);</span><br></pre></td></tr></table></figure>
+
+<p>1</p>
+<ul>
+<li>如果 onFulfilled 和 onRejected 不是函数，则会被忽略。<ul>
+<li>如果 onFulfilled 是一个函数，则当 Promise 状态转变成 Fulfilled 时，会被触发，并能获取 Resolve 中传递的值。</li>
+<li>如果 onRejected 是一个函数，则当 Promise 状态转变成 Rejected 时，会被触发，并能获取 Reject 中传递的值。</li>
+</ul>
+</li>
+<li>then 方法可以被多次调用，按照调用顺序执行代码。</li>
+<li>then 方法同样返回一个 Promise 对象。</li>
+</ul>
+<h3 id="Promise-的解析过程"><a href="#Promise-的解析过程" class="headerlink" title="Promise 的解析过程"></a>Promise 的解析过程</h3><p>当 Promise 的 resolve 方法调用时，会传入一个值，Promise 会根据值类型的不同，进行不同的处理。</p>
+<ul>
+<li><p>如果 resolve 的参数是 Promise 本身，则会报循环 Promise 错误。</p>
+</li>
+<li><p>如果 resolve 的参数是一个 新 Promise</p>
+<p>，则会等待新 Promise 的状态改变后，返回新 Promise 的值。</p>
+<ul>
+<li>如果新 Promise 的状态不是 Fulfilled 或者 Resolve，调用新 Promise 的 then 方法，直到状态改变为止。</li>
+</ul>
+</li>
+<li><p><strong>如果 resolve 的参数是一个对象或者函数</strong>，会检查是否含有 then 方法，如果有，则会被当成一个新 Promise 处理（通过上一步的方式处理）。</p>
+</li>
+<li><p>其他情况，则会直接返回 resolve 中的值。</p>
+</li>
+</ul>
+<h2 id="Promise-all和Promise-race"><a href="#Promise-all和Promise-race" class="headerlink" title="Promise.all和Promise.race"></a>Promise.all和Promise.race</h2><p><strong><code>Promise.all()</code>**通过传入多个</strong>promise<strong>对象，在传入的多个</strong>promise<strong>都完成时，回调完成；如果传入的</strong>promise<strong>有一个失败，则回调失败，并返回第一个失败的</strong>promise**结果</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([promise1, promise2, promise3]).then(<span class="function">(<span class="params">values</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(values);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//返回结果Array [1, 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong><code>Promise.race()</code></strong> 方法返回一个 promise，一旦迭代器中的某个promise解决或拒绝，返回的 promise就会解 决或拒绝。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise1 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(resolve, <span class="number">500</span>, <span class="string">&#x27;one&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> promise2 = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">setTimeout</span>(resolve, <span class="number">100</span>, <span class="string">&#x27;two&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.race([promise1, promise2]).then(<span class="function">(<span class="params">value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 返回结果: &quot;two&quot;</span></span><br><span class="line"><span class="comment">//两个promise都resolve，但promise2比较快</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="async-await"><a href="#async-await" class="headerlink" title="async/await"></a>async/await</h2><p><code>async/await</code>从字面意思上很好理解，<code>async</code>是异步的意思，<code>await</code>有等待的意思，而两者的用法上也是如此。<code>async</code>用于申明一个<code>function</code>是异步的，而<code>await</code> 用于等待一个异步方法执行完成。</p>
+<p><strong>async</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line">f().then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p>async函数会返回一个promise对象，如果function中返回的是一个值，async直接会用<code>Promise.resolve()</code>包裹一下返回。</p>
+<p><strong>await</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSomething</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;something&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">testAsync</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(<span class="string">&quot;hello async&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> v1 = <span class="keyword">await</span> getSomething();</span><br><span class="line">    <span class="keyword">const</span> v2 = <span class="keyword">await</span> testAsync();</span><br><span class="line">    <span class="built_in">console</span>.log(v1, v2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test(); <span class="comment">// something hello async</span></span><br></pre></td></tr></table></figure>
+
+<p>await操作符等的是一个返回的结果，await会阻塞整一个流程，直到结果返回之后，才会继续下面的代码。</p>
+<p><strong>async/await中捕获异常</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="built_in">Promise</span>.reject(<span class="string">&#x27;1&#x27;</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">myFunction(); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>async/await和promise的区别</strong></p>
+<p>promise最大的问题就是在于业务复杂之后，then内部的逻辑也变得复杂，或者循环的异步嵌套场景等，会写出来不那么优美。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/29/blog/js/JS%20%E5%AE%9E%E7%8E%B0%E7%BB%A7%E6%89%BF/" rel="prev" title="JS 实现继承">
+      <i class="fa fa-chevron-left"></i> JS 实现继承
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/29/blog/js/%E5%85%B6%E4%BB%96/" rel="next" title="JS">
+      JS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">1.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.0.1.</span> <span class="nav-text">定义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-%E7%9A%84-then-%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">Promise 的 then 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise-%E7%9A%84%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"><span class="nav-number">1.2.</span> <span class="nav-text">Promise 的解析过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise-all%E5%92%8CPromise-race"><span class="nav-number">2.</span> <span class="nav-text">Promise.all和Promise.race</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async-await"><span class="nav-number">3.</span> <span class="nav-text">async&#x2F;await</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="OkashiiO"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">OkashiiO</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/136917909" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;136917909" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/1900849346@qq.com" title="E-Mail → 1900849346@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">OkashiiO</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
